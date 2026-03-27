@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-
+const double bottomContainerHeight = 80.0;
+const activeCardColor = Color(0xFF1D1E33);
+const buttomContainerColor = Color(0xFFEB1555);
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
@@ -12,13 +14,51 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+      appBar: AppBar(title: Text('BMI CALCULATOR')),
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: ReusableCard(color: activeCardColor)),
+                Expanded(child: ReusableCard(color: activeCardColor)),
+              ],
+            ),
+          ),
+          Expanded(child: ReusableCard(color: activeCardColor)),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: ReusableCard(color: activeCardColor)),
+                Expanded(child: ReusableCard(color: activeCardColor)),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10.0),
+            color: buttomContainerColor,
+            width: double.infinity,
+            height: bottomContainerHeight,
+          ),
+        ],
       ),
-      body: Center(
-        child: Text('Body Text'),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+  final Color color;
+
+  const ReusableCard({super.key, required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        color: color,
       ),
-    
     );
   }
 }
