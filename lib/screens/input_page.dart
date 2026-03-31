@@ -1,8 +1,11 @@
+import 'package:bmi_calcultor/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import "icon_content.dart";
-import 'reusable_card.dart';
-import 'constans.dart';
+import "../components/icon_content.dart";
+import '../components/reusable_card.dart';
+import '../constants.dart';
+import '../components/bottom_button.dart';
+import '../components/round_icon_button.dart';
 
 enum Gender { male, female }
 
@@ -178,37 +181,16 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 10.0),
-            color: kButtomContainerColor,
-            width: double.infinity,
-            height: kBottomContainerHeight,
-          ),
+          BottomButton(
+            text: 'CALCULATE', 
+            onPressed:  () {
+             Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ResultsPage()),
+              );
+           }),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  const RoundIconButton({
-    super.key,
-    required this.icon,
-    required this.numberChanger,
-  });
-
-  final FaIconData icon;
-  final void Function() numberChanger;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: numberChanger,
-      elevation: 6.0,
-      fillColor: Color(0xFF4C4F5E),
-      shape: CircleBorder(),
-      constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
-      child: FaIcon(icon),
     );
   }
 }
