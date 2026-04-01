@@ -19,8 +19,10 @@ This project demonstrates custom theming, reusable widgets, input handling, navi
 
 ## Demo
 
-![Home Screen](assets/screenshots/home.png)  
-![Results Screen](assets/screenshots/results.png)  
+<p align="center">
+  <img src="assets/screenshots/home.png" alt="Home Screen" width="250"/>
+  <img src="assets/screenshots/results.png" alt="Results Screen" width="250"/>
+</p> 
 
 
 ## Download
