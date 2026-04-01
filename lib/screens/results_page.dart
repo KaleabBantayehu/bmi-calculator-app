@@ -3,10 +3,12 @@ import 'package:bmi_calcultor/components/reusable_card.dart';
 import 'package:flutter/material.dart';
 import '../components/bottom_button.dart';
 
-
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  const ResultsPage({super.key, required this.bmiResult, required this.bmiText, required this.interpretation});
 
+  final String bmiResult;
+  final String bmiText;
+  final String interpretation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +32,10 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('OVERWEIGHT', style: kResultTextStyle),
-                  Text('28.7', style: kResultNumberStyle),
+                  Text(bmiText.toUpperCase(), style: kResultTextStyle),
+                  Text(bmiResult, style: kResultNumberStyle),
                   Text(
-                    'Your BMI result is quite over the normal bmi you should start diet',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: kResultAdviceTextStyle,
                   ),
