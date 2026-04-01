@@ -17,6 +17,19 @@ This project demonstrates custom theming, reusable widgets, input handling, navi
 - Navigation between input and results screens using Navigator
 - Responsive design across devices
 
+## Demo
+
+![Home Screen](assets/screenshots/home.png)  
+![Results Screen](assets/screenshots/results.png)  
+
+
+## Download
+
+Get the production-ready build without debug overhead:
+
+- [Download APK](https://github.com/KaleabBantayehu/bmi-calculator-app/releases/latest)
+
+
 ## Getting Started
 
 1. **Clone the repository:**
